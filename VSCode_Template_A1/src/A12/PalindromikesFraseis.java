@@ -13,12 +13,8 @@ public class PalindromikesFraseis {
 
         int LengthOfArray = (nextLine.length());
 
-        char[] leksi = new char[LengthOfArray];
-
-        for (int j=0; j<LengthOfArray;j++){
-            System.out.println(leksi[j]);
-        }
-        
+        char[] leksi = nextLine.toCharArray();
+        System.out.println(leksi);
 
         in.close();
     }
