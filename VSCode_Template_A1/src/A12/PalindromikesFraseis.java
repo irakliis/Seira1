@@ -1,6 +1,5 @@
 package A12;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 // HY252 - A1 - Exercise 2a
