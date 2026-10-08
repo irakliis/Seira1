@@ -8,12 +8,6 @@ import java.util.Scanner;
 public class PalindromikesFraseis {
 
     public static void main(String[] args) {
-        System.out.println("Please type something out.\nBitch: ");
-        Scanner scanner = new Scanner(System.in);
-        String nextLine = scanner.nextLine();
-        Normalizer.normalize(nextLine, Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
-        System.out.println(nextLine);
-        scanner.close();
         
     }
 
