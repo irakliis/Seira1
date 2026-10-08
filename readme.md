@@ -1,3 +1,3 @@
 # git in vs code
 
-nigga
+# Hi!
