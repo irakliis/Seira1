@@ -6,17 +6,17 @@ import java.util.Scanner;
 public class PalindromikesFraseis {
 
     public static void main(String[] args) {
+        long start = System.nanoTime();
         System.out.println("Dose leksi");
         Scanner in = new Scanner(System.in);
         String nextLine = in.nextLine();
-
-        long start = System.nanoTime();
+        
         boolean check = isPalindromikiFrash(nextLine);
-        long end = System.nanoTime();
-        double elapsedSeconds = (end - start) / 1000000000.0;
 
         System.out.println("(MAIN) Word was a palindrome, true or false?: " + check);
-        System.out.println("Time in seconds passed=" + elapsedSeconds);
+        long end = System.nanoTime();
+        
+        System.out.println("Time in seconds passed=" + (end-start)/1000000000);
         in.close();
     }
 
