@@ -6,14 +6,17 @@ import java.util.Scanner;
 public class PalindromikesFraseis {
     public static void main(String[] args) {
         long time = System.nanoTime();
+        time/=1000000000.0;
         System.out.println("Dose leksi");
         Scanner in = new Scanner(System.in);
         String nextLine = in.nextLine();
 
-        isPalindromikiFrash(nextLine);
+        boolean check = isPalindromikiFrash(nextLine);
 
+        System.out.println("(MAIN) Word was a palindrome, true or false?: "+check);
+        System.out.println("Time in seconds passed=" + time+" - I don't think that's accurate honestly.");
         in.close();
-        System.out.println("Time in seconds passed=" + time/(10^9));
+
     }
 
     static boolean isPalindromikiFrash(String s) {
@@ -29,8 +32,16 @@ public class PalindromikesFraseis {
         }
         String inverted = new String(Anapodi);
         System.out.println("Anapodo= "+inverted);
-        System.out.println(inverted.equals(s));
-        
-        return false;
+
+        i=0;
+        do{
+            if(!(leksi[i]==Anapodi[LengthOfArray-1-i])){
+                return false;
+            }    
+            i++;
+        }while(i<LengthOfArray);
+
+        //i=0 a[0]+a[50] a[i]+a[LengthOfArray] i+1
+        return true;
     }
 }
