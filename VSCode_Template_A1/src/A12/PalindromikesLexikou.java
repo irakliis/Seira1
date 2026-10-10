@@ -19,7 +19,7 @@ public class PalindromikesLexikou {
         Boolean check;
 
         try {
-            FileInputStream fis=new FileInputStream("Resources/gr.dic"); //file to be scanned
+            FileInputStream fis=new FileInputStream("Resources/ben.dic"); //file to be scanned
             Scanner sc=new Scanner(fis);
                 while(sc.hasNextLine()) { //returns true if there is another line to read
                     total++;
@@ -39,6 +39,7 @@ public class PalindromikesLexikou {
 
         if(total!=0){ // total words + average length + precentage
             System.out.println("Total words: "+total);
+            System.out.println("Num of palindromes: "+ pCount);
             System.out.println("The average length of all of the words is = "+ ((double)letters)/total);
             System.out.println("The percentage of palindromes in the file was: " 
             + ((double)pCount /total) * 100);
