@@ -9,10 +9,20 @@ public class PalindromikesFraseis {
 
     public static void main(String[] args) {
         System.out.println("Dose leksi");
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in,"UTF-8");
         String nextLine = in.nextLine();
+        System.out.println(Normalizer.normalize(nextLine, 
+        Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+"
+        , "").toLowerCase().replace('ς', 'σ'));
         
+        long start = System.nanoTime();
+
         boolean check = isPalindromikiFrash(nextLine);
+
+        long end = System.nanoTime();
+
+        System.out.println("Time in seconds passed=" + (end-start)/1000000000);
+
 
         System.out.println("(MAIN) Word was a palindrome, true or false?: " + check);        
         in.close();
@@ -20,8 +30,10 @@ public class PalindromikesFraseis {
 
     static boolean isPalindromikiFrash(String s) {
         int i;
-        System.out.println(Normalizer.normalize(s, 
-        Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", ""));
+        
+        s = Normalizer.normalize(s, 
+        Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", 
+        "").toLowerCase().replace('ς', 'σ');
 
         int LengthOfArray = s.length();
 
@@ -32,24 +44,13 @@ public class PalindromikesFraseis {
             Anapodi[i] = leksi[LengthOfArray - i - 1];
         }
 
-        String inverted = new String(Anapodi);
-
-        System.out.println("edoses = " + s);
-        System.out.println("Anapodo = " + inverted);
-
-        long start = System.nanoTime();
         i = 0;
         do {
             if (!(leksi[i] == leksi[LengthOfArray - 1 - i])) {
-                long end = System.nanoTime();
-                System.out.println("Time in seconds passed=" + (end-start)/1000000000);
                 return false;
             }
             i++;
         } while (i < LengthOfArray / 2);
-        long end = System.nanoTime();
-
-        System.out.println("Time in seconds passed=" + (end-start)/1000000000);
         return true;
     }
 }

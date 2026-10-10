@@ -19,8 +19,8 @@ public class PalindromikesLexikou {
         Boolean check;
 
         try {
-            FileInputStream fis=new FileInputStream("Resources/ben.dic"); //file to be scanned
-            Scanner sc=new Scanner(fis);
+            FileInputStream fis=new FileInputStream("Resources/gr.dic"); //file to be scanned
+            Scanner sc=new Scanner(fis,"UTF-8");
                 while(sc.hasNextLine()) { //returns true if there is another line to read
                     total++;
                     temp = sc.nextLine();
@@ -38,9 +38,12 @@ public class PalindromikesLexikou {
             }
 
         if(total!=0){ // total words + average length + precentage
+            System.out.println("---------------------\n"+
+                "STATISTICS:");
             System.out.println("Total words: "+total);
             System.out.println("Num of palindromes: "+ pCount);
-            System.out.println("The average length of all of the words is = "+ ((double)letters)/total);
+            System.out.println("The average length of all of the words is = "+ 
+            ((double)letters)/total);
             System.out.println("The percentage of palindromes in the file was: " 
             + ((double)pCount /total) * 100);
 
@@ -51,6 +54,7 @@ public class PalindromikesLexikou {
         }
         
         Sort(palindromes, ArrSize); // Sort and print words from Z-A
+        System.out.println("------------------------------\n"+"Sorted array:");
         for(i=0; i<ArrSize;i++){
             System.out.println(palindromes.get(i));
         }
@@ -61,7 +65,7 @@ public class PalindromikesLexikou {
         float timediff = (end - start)/1000F;
 
         // Printing the time it took for the program to finish
-        System.out.println("It took:"+ timediff+" seconds to finish the program."); 
+        System.out.println("It took: "+ timediff+" seconds to finish the program."); 
     }
 
 static void Sort(List<String> list, int size) { // sort
@@ -71,7 +75,7 @@ static void Sort(List<String> list, int size) { // sort
         String max = list.get(i);
         int pos = i;
             for (j = i + 1; j < size; j++) {
-                if (list.get(j).compareTo(max) > 0) {
+                if (list.get(j).length() > max.length()) {
                     pos = j;
                     max = list.get(j);
                 }
