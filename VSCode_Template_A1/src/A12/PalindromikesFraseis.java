@@ -17,7 +17,6 @@ public class PalindromikesFraseis {
     }
 
     static boolean isPalindromikiFrash(String s) {
-        long start = System.nanoTime();
         int i;
         int LengthOfArray = s.length();
 
@@ -32,6 +31,8 @@ public class PalindromikesFraseis {
 
         String inverted = new String(Anapodi);
         System.out.println("Anapodo= " + inverted);
+
+        long start = System.nanoTime();
         i = 0;
         do {
             if (!(leksi[i] == leksi[LengthOfArray - 1 - i])) {
