@@ -1,5 +1,7 @@
 package A12;
 
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.Scanner;
 
 // HY252 - A1 - Exercise 2a
@@ -18,19 +20,22 @@ public class PalindromikesFraseis {
 
     static boolean isPalindromikiFrash(String s) {
         int i;
+        System.out.println(Normalizer.normalize(s, 
+        Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", ""));
+
         int LengthOfArray = s.length();
 
         char[] leksi = s.toCharArray();
         char[] Anapodi = s.toCharArray();
-
-        System.out.println("edoses= " + s);
 
         for (i = 0; i < LengthOfArray; i++) {
             Anapodi[i] = leksi[LengthOfArray - i - 1];
         }
 
         String inverted = new String(Anapodi);
-        System.out.println("Anapodo= " + inverted);
+
+        System.out.println("edoses = " + s);
+        System.out.println("Anapodo = " + inverted);
 
         long start = System.nanoTime();
         i = 0;
