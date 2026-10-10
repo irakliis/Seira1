@@ -84,7 +84,7 @@ static void Sort(List<String> list, int size) { // sort
             list.set(i, list.get(pos));
             list.set(pos, temp);
 
-            /* temp = list(i)
+            /* temp = list(i) 
             list(i) = list(pos)
             list(pos) = temp */
         }
