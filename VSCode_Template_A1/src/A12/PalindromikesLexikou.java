@@ -13,7 +13,8 @@ public class PalindromikesLexikou {
         long letters=0;
         List<String> palindromes = new ArrayList<>();
 
-        if(total!=0){ // average length + precentage
+        if(total!=0){ // total words + average length + precentage
+            System.out.println("Total words: "+total);
             System.out.println("The average length of all of the words is = "+ ((double)letters)/total);
             System.out.println("The percentage of palindromes in the file was: " 
             + ((double)pCount /total) * 100);
@@ -23,17 +24,19 @@ public class PalindromikesLexikou {
         for(i=0;i<ArrSize;i++){ // Printing all the palindromes that were found.
             System.out.println(palindromes.get(i));
         }
-        //Printing the precentage
         
-        Sort(palindromes, ArrSize);
+        Sort(palindromes, ArrSize); // Sort and print words from Z-A
         for(i=0; i<ArrSize;i++){
             System.out.println(palindromes.get(i));
         }
         //finding the time after the operation is executed
         long end = System.currentTimeMillis();
+        
         //finding the time difference and converting it into seconds
-        long timediff = end - start;
-        System.out.println(timediff/1000);   
+        float timediff = (end - start)/1000F;
+
+        // Printing the time it took for the program to finish
+        System.out.println("It took:"+ timediff+" seconds to finish the program."); 
     }
 
 static void Sort(List<String> list, int size) { // sort
