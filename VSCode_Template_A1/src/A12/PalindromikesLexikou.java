@@ -1,7 +1,10 @@
 package A12;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 // HY252 - A1 - Exercise 2b, 2c
 public class PalindromikesLexikou {
@@ -12,6 +15,27 @@ public class PalindromikesLexikou {
         int total=0,pCount=0,i;
         long letters=0;
         List<String> palindromes = new ArrayList<>();
+        String temp;
+        Boolean check;
+
+        try {
+            FileInputStream fis=new FileInputStream("Resources/gr.dic"); //file to be scanned
+            Scanner sc=new Scanner(fis);
+                while(sc.hasNextLine()) { //returns true if there is another line to read
+                    total++;
+                    temp = sc.nextLine();
+                    letters += (temp.length());
+                    check = PalindromikesFraseis.isPalindromikiFrash(temp);
+                        if (check==true){
+                            pCount++;
+                            palindromes.add(temp);
+                        }
+                }
+                    sc.close(); //closes the scanner
+            } 
+            catch(IOException e) {
+                System.out.println(e);
+            }
 
         if(total!=0){ // total words + average length + precentage
             System.out.println("Total words: "+total);
