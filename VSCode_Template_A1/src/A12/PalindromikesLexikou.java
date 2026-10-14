@@ -19,8 +19,6 @@ public class PalindromikesLexikou {
         String temp;
         Boolean check;
 
-        Player p = new Player();
-
         try {
             FileInputStream fis=new FileInputStream("Resources/gr.dic"); //file to be scanned
             Scanner sc=new Scanner(fis,"UTF-8");
