@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "VSCode_Template_A1/src/A12/jfugue-4.0.3.jar"
+    ]
+}
