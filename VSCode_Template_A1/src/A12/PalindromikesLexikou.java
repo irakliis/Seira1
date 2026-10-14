@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.jfugue.Player;
 
 // HY252 - A1 - Exercise 2b, 2c
 public class PalindromikesLexikou {
@@ -17,6 +18,8 @@ public class PalindromikesLexikou {
         List<String> palindromes = new ArrayList<>();
         String temp;
         Boolean check;
+
+        Player p = new Player();
 
         try {
             FileInputStream fis=new FileInputStream("Resources/gr.dic"); //file to be scanned
