@@ -98,7 +98,7 @@ public class DrawDelta {
 				output += "\n";
 			}
 			UIManager.put("OptionPane.messageFont",
-			              new Font("Lucida Console", Font.BOLD, 20));
+			new Font("Lucida Console", Font.BOLD, 20));
 
 			JOptionPane.showMessageDialog(
 			    null,
