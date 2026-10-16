@@ -40,24 +40,13 @@ public class DrawDelta {
 				return;
 			}
 			else {
-				while (true) {
-					String input = JOptionPane.showInputDialog("Give me a number ", 5);
-					if (input == null) {
-						scanner.close();
-						return;
-					}
-					try {
-						L = Integer.parseInt(input.trim());
-					} catch (NumberFormatException e) {
-						JOptionPane.showMessageDialog(null, "Please enter a whole number.");
-						continue;
-					}
-					if (L < 3 || L > 20)
-						break;
+				L = Integer.parseInt(JOptionPane.showInputDialog(
+				"Give me a number ",5)); // το 5 είναι η default τιμή
+				while(L>=3 && L<=20) {
 					drawDgraphics(L, M);
+					L = Integer.parseInt(JOptionPane.showInputDialog(
+					"Give me a number ",5));
 				}
-				scanner.close();
-				return;
 			}
 		}
 		if(M=='g') {
